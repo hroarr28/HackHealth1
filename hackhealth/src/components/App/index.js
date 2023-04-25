@@ -1,10 +1,10 @@
 import "./App.css";
-
+import MainPage from "../Main-Page/Main-Page"
 function App() {
   return (
-    <main className="App">
-      <h1>hello</h1>
-    </main>
+    <div className="App">
+      <MainPage/> 
+    </div>
   );
 }
 
