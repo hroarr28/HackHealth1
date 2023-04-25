@@ -6,24 +6,16 @@ import "./Daily-Progress.css";
 // in the third section it will have a h2 element saying stats and badges and 3 seperate p elements and img elements
 
 function DailyProgress(props) {
-
-
-
-
   return (
-      <div className='Daily-Progress'>
-          {/* //pull the day from the props */}
-          {/* // make a .map function to display the days based of the id */}
-          
-                    
-      <h1>{props.day}</h1>
-      <div className='Step-Counter'>
+    <div className="Daily-Progress">
+      <h1>{props.getDayName(props.selectedDay)}</h1>
+      <div className="Step-Counter">
         <p>How many steps did you do today?</p>
         <img
-          src='https://www.flaticon.com/svg/static/icons/svg/3011/3011270.svg'
-          alt='steps'
+          src="https://www.flaticon.com/svg/static/icons/svg/3011/3011270.svg"
+          alt="steps"
         />
-        <input type='text' placeholder='Enter your steps' />
+        <input type="text" placeholder="Enter your steps" />
         <button>Enter</button>
       </div>
       <div>
@@ -32,9 +24,9 @@ function DailyProgress(props) {
           <p>Congrats blah blah</p>
           <p>Congrats blah blah</p>
           <p>Congrats blah blah</p>
-          <img src='./medal (1).png' alt='steps' />
-          <img src='./medal (2).png' alt='steps' />
-          <img src='./medal.png' alt='steps' />
+          <img src="./medal (1).png" alt="steps" />
+          <img src="./medal (2).png" alt="steps" />
+          <img src="./medal.png" alt="steps" />
         </div>
       </div>
     </div>
