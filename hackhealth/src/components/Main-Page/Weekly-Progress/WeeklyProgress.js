@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Distance from "../Distance/Distance";
-import WeeklyStepGoal from "../WeeklyStepGoal/WeeklyStepGoal";
+import WeeklyStepGoal from "../Weekly-Step-Goal/WeeklyStepGoal";
 
 // props needed: weekly step goal
 //               daily steps

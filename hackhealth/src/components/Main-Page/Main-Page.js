@@ -1,4 +1,4 @@
-import WeeklyProgress from "./WeeklyProgress/WeeklyProgress";
+import WeeklyProgress from "./Weekly-Progress/WeeklyProgress";
 
 function MainPage() {
   return <WeeklyProgress />;
