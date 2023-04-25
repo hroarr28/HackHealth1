@@ -1,0 +1,16 @@
+<mxfile host="65bd71144e">
+    <diagram id="5iDcIYQMYSgUvm0AGTRG" name="Page-1">
+        <mxGraphModel dx="1097" dy="450" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;STATES&lt;br&gt;Day&lt;br&gt;userName&lt;br&gt;useImage&lt;br&gt;weeklyGoal&lt;br&gt;dailyStep&lt;br&gt;storeSteps - array of objects{mon: 3000}&lt;br&gt;&amp;nbsp;badges - array of rewards {badgeName: 70000}&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="30" width="210" height="230" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Components&lt;br&gt;Login&lt;br&gt;Day&lt;br&gt;WeekGoal&lt;br&gt;TodaysSteps&lt;br&gt;Chart&lt;br&gt;Badges&lt;br&gt;Distance" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+                    <mxGeometry x="380" y="30" width="210" height="230" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
