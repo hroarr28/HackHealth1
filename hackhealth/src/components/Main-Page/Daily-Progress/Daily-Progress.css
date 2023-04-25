@@ -1,0 +1,23 @@
+.Daily-Progress {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .Daily-Progress > * {
+    flex: 1;
+    margin: 10px;
+  }
+
+  .Step-Counter {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .Progress-Text {
+    display : flex;
+    
+  }
