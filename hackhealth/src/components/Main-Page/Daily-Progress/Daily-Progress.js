@@ -5,10 +5,18 @@ import "./Daily-Progress.css";
 // it will contain 3 sections in the first section it will have a h1 saying the day, in the second section it will have a P element saying how many steps did you do today? also an image and an input box to type in daily step count and a button saying enter
 // in the third section it will have a h2 element saying stats and badges and 3 seperate p elements and img elements
 
-function DailyProgress() {
+function DailyProgress(props) {
+
+
+
+
   return (
-    <div className='Daily-Progress'>
-      <h1>Monday</h1>
+      <div className='Daily-Progress'>
+          {/* //pull the day from the props */}
+          {/* // make a .map function to display the days based of the id */}
+          
+                    
+      <h1>{props.day}</h1>
       <div className='Step-Counter'>
         <p>How many steps did you do today?</p>
         <img

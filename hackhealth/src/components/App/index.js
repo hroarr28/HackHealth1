@@ -7,7 +7,7 @@ function App() {
   return (
     <main className="App">
       <LoginPage />
-      <DayButtons />
+      
       <MainPage/>
 
     </main>
