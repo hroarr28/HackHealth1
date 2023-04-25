@@ -20,12 +20,14 @@ function App() {
 
   return (
     <main className="App">
+      <MainPage/>
       <LoginPage
         getUserName={getUserName}
         handleClick={handleClick}
         user={user}
       />
       <DayButtons />
+      <LoginPage />
       <MainPage />
     </main>
   );
