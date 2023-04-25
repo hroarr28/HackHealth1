@@ -1,11 +1,11 @@
 import React from "react";
-import "./LoginPageStyles.css"
+import "./LoginPageStyles.css";
 import LeftImage from "./Image/Image";
 import LoginForm from "./Login-Form/Login-Form";
-function LoginPage() {
+function LoginPage({ getUserName }) {
   return (
     <div className="login-page">
-      <LoginForm />
+      <LoginForm getUserName={getUserName} />
       <LeftImage />
     </div>
   );
