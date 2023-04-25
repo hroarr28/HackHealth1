@@ -1,0 +1,22 @@
+.Login-Form {
+    background-color: #3E73B1;
+    width: 50%;
+}
+
+header{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 20px;
+}
+
+header img{
+    width: 200px;
+    height: 200px;
+}
+
+.avatar-img{
+    width: 200px;
+    height: 200px;
+}
