@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Distance from "../Distance/Distance";
+import WeeklyStepGoal from "../WeeklyStepGoal/WeeklyStepGoal";
 
 // props needed: weekly step goal
 //               daily steps
@@ -12,7 +13,7 @@ function WeeklyProgress() {
         <p>You are ${} away from your weekly goal</p>
       </div>
       <div>
-        <WeeklyProgress />
+        <WeeklyStepGoal />
       </div>
       <div>
         <Distance />
