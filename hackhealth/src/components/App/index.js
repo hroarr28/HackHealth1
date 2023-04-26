@@ -12,8 +12,7 @@ function App() {
     setName(event.target.value);
   }
 
-  function handleClick(event) {
-    event.preventDefault();
+  function handleClick() {
     setUser(name);
     console.log(name);
   }

@@ -27,13 +27,17 @@ function LoginForm({ getUserName, handleClick, user, }) {
           onChange={getUserName}
         />
 
-        {/*<button onClick={(event) => handleClick(event)}>LOGIN</button>*/}
+        {/*<Link to="/main">
+          <button onClick={(event) => handleClick(event)}>LOGIN</button>
+  </Link>*/}
 
-        {isLoggedIn ?(
-        <Link to="/main"><button onClick={handleClick}>LOGIN</button></Link>)
-        : (<Link to="/"><button onClick={handleClick}>LOGIN</button></Link>)
-      }
-
+        <div>
+          {isLoggedIn ? (
+           <Link to="/main"><a onClick={handleClick}>LOGIN</a></Link>
+            ) : (
+            <Link to="/"><a onClick={handleClick}>LOGIN</a></Link>
+            )}
+        </div>
       </form>
     </div>
   );
