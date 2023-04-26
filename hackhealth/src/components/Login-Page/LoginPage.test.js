@@ -42,6 +42,17 @@ test("Button with 'login' text", function () {
   expect(button).toBeVisible();
 });
 
+//this test fails as the button isn't actually disabled when there's no input - think this is because an alert comes up instead?
+test('login button disabled when there is no username input', function () {
+  render(<LoginPage getUserName={jest.fn} user={user} handleClick={jest.fn} />);
+  const button = screen.getByRole("button", { name: "LOGIN" });
+  const input = screen.getByRole('textbox');
+  expect(button).toBeDisabled();
+  userEvent.type(input, '');
+  expect(button).toBeEnabled();
+});
+
+
 //import the component☑️
 //target the input field
 //check the input field is visible / exists

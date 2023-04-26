@@ -40,7 +40,7 @@ function App() {
             />
           }
         />
-        <Route path="/main" element={<MainPage user={user} />} />
+        <Route path="/main" element={<MainPage />} />
       </Routes>
     </main>
   );
