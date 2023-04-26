@@ -118,6 +118,7 @@ function MainPage() {
 
   return (
     <>
+
       <div className="Main-Page">
         <DayButtons
           Button={Button}
@@ -138,6 +139,7 @@ function MainPage() {
           getDaySteps={getDaySteps}
           selectedDay={selectedDay}
           getDayName={getDayName}
+
           stepRemainderResult={stepRemainderResult}
         />
       </div>
