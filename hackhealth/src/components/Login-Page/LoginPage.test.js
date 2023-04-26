@@ -13,11 +13,18 @@ test("Input field exists", function () {
   expect(input).toBeVisible();
 });
 
-// test("Button with text Add To List appears on screen", function () {
-//   render(<AddItem addToList={jest.fn} buttonText={buttonText} />);
-//   const button = screen.getByRole("button", { name: buttonText });
-//   expect(button).toBeVisible();
-// });
+test("Text in the input field matches user input", function () {
+  render(<LoginPage getUserName={jest.fn} user={user} handleClick={jest.fn} />);
+  const name = 'Ash'
+  // const input = screen.getByRole("textbox");
+  // expect(input).toHaveValue();
+})
+
+test("Button with 'login' text", function () {
+  render(<LoginPage getUserName={jest.fn} user={user} handleClick={jest.fn} />);
+  const button = screen.getByRole("button", { name: "LOGIN" });
+  expect(button).toBeVisible();
+});
 
 //import the component☑️
 //target the input field
