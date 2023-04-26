@@ -8,7 +8,7 @@ function DayButtons(props) {
   return (
     <div className='nav-container'>
       <div className='buttons'>
-        <props.Button label="M" day={1} />
+      <props.Button label="M" day={1} />
         <props.Button label="T" day={2} />
         <props.Button label="W" day={3} />
         <props.Button label="T" day={4} />
@@ -16,7 +16,7 @@ function DayButtons(props) {
         <props.Button label="S" day={6} />
         <props.Button label="S" day={7} />
       </div>
-      <h1></h1>
+
     </div>
   );
 };

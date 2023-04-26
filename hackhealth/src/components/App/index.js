@@ -3,6 +3,7 @@ import "./App.css";
 import MainPage from "../Main-Page/Main-Page";
 import LoginPage from "../Login-Page/LoginPage";
 import { useState } from "react";
+import {Route, Routes, Link} from "react-router-dom";
 function App() {
   const [name, setName] = useState("");
   const [user, setUser] = useState("");
@@ -19,14 +20,15 @@ function App() {
 
   return (
     <main className="App">
-      <LoginPage
-        getUserName={getUserName}
+
+
+      <Routes>
+        <Route path="/" element={ <LoginPage getUserName={getUserName}
         handleClick={handleClick}
-        user={user}
-      />
-      {/* <DayButtons /> */}
-      <h1>{user}</h1>
-      <MainPage />
+        user={user}/>}/>
+        <Route path="/main" element={ <MainPage/>}/>  
+      </Routes>
+
     </main>
   );
 }

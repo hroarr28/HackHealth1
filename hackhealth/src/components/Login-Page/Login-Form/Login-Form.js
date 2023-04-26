@@ -1,7 +1,11 @@
 import React from "react";
 import "./LoginFormStyles.css";
+import {Link} from "react-router-dom";
 
-function LoginForm({ getUserName, handleClick, user }) {
+function LoginForm({ getUserName, handleClick, user, }) {
+
+  const isLoggedIn = user !== ""? true : false;
+
   return (
     <div className="Login-Form">
       <header>
@@ -22,7 +26,14 @@ function LoginForm({ getUserName, handleClick, user }) {
           required
           onChange={getUserName}
         />
-        <button onClick={(event) => handleClick(event)}>LOGIN</button>
+
+        {/*<button onClick={(event) => handleClick(event)}>LOGIN</button>*/}
+
+        {isLoggedIn ?(
+        <Link to="/main"><button onClick={handleClick}>LOGIN</button></Link>)
+        : (<Link to="/"><button onClick={handleClick}>LOGIN</button></Link>)
+      }
+
       </form>
     </div>
   );
