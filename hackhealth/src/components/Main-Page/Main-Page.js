@@ -5,9 +5,7 @@ import WeeklyProgress from "./Weekly-Progress/WeeklyProgress";
 import { useState } from "react";
 // make a main page component
 
-function MainPage() {
-  // make a days array with the days of the week inside an id object
-
+function MainPage(props) {
   const days = [
     { id: 1, day: "Monday" },
     { id: 2, day: "Tuesday" },
@@ -19,8 +17,14 @@ function MainPage() {
   ];
 
   const [selectedDay, setSelectedDay] = useState("");
-
-  //State to store daily steps
+  const [mondaySteps, setMondaySteps] = useState('');
+  const [tuesdaySteps, setTuesdaySteps] = useState('');
+  const [wednesdaySteps, setWednesdaySteps] = useState('');
+  const [thursdaySteps, setThursdaySteps] = useState('');
+  const [fridaySteps, setFridaySteps] = useState('');
+  const [saturdaySteps, setSaturdaySteps] = useState('');
+  const [sundaySteps, setSundaySteps] = useState('');
+  const [stepsRemainder, setStepsRemainder] = useState(0);
 
   function handleClick(day) {
     setSelectedDay(day);
@@ -36,22 +40,79 @@ function MainPage() {
     const day = days.find((d) => d.id === dayId);
     return day ? day.day : "";
   }
-  //map through the days array to find the day by id
 
-  // how do i acces specific days in the array by id?
+  function getDaySteps(dayId) {
+    switch (dayId) {
+      case 1:
+        return mondaySteps;
+      case 2:
+        return tuesdaySteps;
+      case 3:
+        return wednesdaySteps;
+      case 4:
+        return thursdaySteps;
+      case 5:
+        return fridaySteps;
+      case 6:
+        return saturdaySteps;
+      case 7:
+        return sundaySteps;
+      default:
+        return '';
+    }
+  }
+  console.log(typeof mondaySteps)
 
-  // how do i use a key to access the id of the day?
+  function stepRemainderResult() {
+    const totalSteps = parseInt(mondaySteps) + parseInt(tuesdaySteps) + parseInt(wednesdaySteps) + parseInt(thursdaySteps) + parseInt(fridaySteps) + parseInt(saturdaySteps) + parseInt(sundaySteps);
+    const remainder = props.weeklyStepGoal - totalSteps;
+    console.log(remainder, "remainder")
+    setStepsRemainder(remainder);
+  
+  }
 
-  // use a .map function to display the days based off the id
+
+  function setDaySteps(dayId, steps) {
+    switch (dayId) {
+      case 1:
+        setMondaySteps(steps);
+        break;
+      case 2:
+        setTuesdaySteps(steps);
+        break;
+      case 3:
+        setWednesdaySteps(steps);
+        break;
+      case 4:
+        setThursdaySteps(steps);
+        break;
+      case 5:
+        setFridaySteps(steps);
+        break;
+      case 6:
+        setSaturdaySteps(steps);
+        break;
+      case 7:
+        setSundaySteps(steps);
+        break;
+      default:
+        break;
+    }
+  }
 
   return (
     <>
-
       <div className='Main-Page'>
         <DayButtons Button={Button} getDayName={getDayName} selectedDay={selectedDay} days={days} />
-        <WeeklyProgress />;
-
-        <DailyProgress selectedDay={selectedDay} getDayName={getDayName} />
+        <WeeklyProgress stepsRemainder={stepsRemainder} stepRemainderResult={stepRemainderResult} />
+        <DailyProgress 
+          setDaySteps={setDaySteps} 
+          getDaySteps={getDaySteps} 
+          selectedDay={selectedDay} 
+          getDayName={getDayName} 
+          stepRemainderResult={stepRemainderResult}
+          
+        />
       </div>
     </>
   );
