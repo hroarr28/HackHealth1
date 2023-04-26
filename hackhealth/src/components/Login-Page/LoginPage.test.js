@@ -9,14 +9,14 @@ const user = "";
 test("Profile picture exists", function () {
   render(<LoginPage getUserName={jest.fn} user={user} handleClick={jest.fn} />);
   //screen.logTestingPlaygroundURL();
-  const image = screen.getByRole("img", {name: "AvatarImg"});
+  const image = screen.getByRole("img", { name: "AvatarImg" });
   expect(image).toBeVisible();
 });
 
 test("'Username' heading exists", function () {
   render(<LoginPage getUserName={jest.fn} user={user} handleClick={jest.fn} />);
   //screen.logTestingPlaygroundURL();
-  const heading = screen.getByRole("heading", {name: "Username"});
+  const heading = screen.getByRole("heading", { name: "Username" });
   expect(heading).toBeVisible();
 });
 
