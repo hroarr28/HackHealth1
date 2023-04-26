@@ -47,7 +47,7 @@ function MainPage() {
   return (
     <>
       <div className='Main-Page'>
-              <DayButtons Button={Button} getDayName={getDayName} selectedDay={selectedDay} days={days} />
+        <DayButtons Button={Button} getDayName={getDayName} selectedDay={selectedDay} days={days} />
         <WeeklyProgress />;
         <DailyProgress selectedDay={selectedDay} getDayName={getDayName} />
       </div>
