@@ -5,7 +5,7 @@ import WeeklyProgress from "./Weekly-Progress/WeeklyProgress";
 import { useState } from "react";
 // make a main page component
 
-function MainPage() {
+function MainPage(props) {
   const [weeklyStepGoal, setWeeklyStepGoal] = useState(0);
   // create use state to display weekly step goal on click
   const [showWeeklyStepGoal, setShowWeeklyStepGoal] = useState(false);
@@ -118,7 +118,6 @@ function MainPage() {
 
   return (
     <>
-
       <div className="Main-Page">
         <DayButtons
           Button={Button}
@@ -133,13 +132,13 @@ function MainPage() {
           weeklyStepGoal={weeklyStepGoal}
           handleEnterClick={handleEnterClick}
           handleWeeklyEnterChange={handleWeeklyEnterChange}
+          user={props.user}
         />
         <DailyProgress
           setDaySteps={setDaySteps}
           getDaySteps={getDaySteps}
           selectedDay={selectedDay}
           getDayName={getDayName}
-
           stepRemainderResult={stepRemainderResult}
         />
       </div>
