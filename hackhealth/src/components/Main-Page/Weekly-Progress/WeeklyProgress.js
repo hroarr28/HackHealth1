@@ -28,7 +28,7 @@ const [showWeeklyStepGoal, setShowWeeklyStepGoal] = useState(false);
   return (
     <div>
       <div>
-      <h1>Welcome Back</h1>
+        <h1>Welcome Back, {props.user}!</h1>
       <WeeklyGoal stepRemainderResult={props.stepRemainderResult} showWeeklyStepGoal={showWeeklyStepGoal} weeklyStepGoal={weeklyStepGoal} handleEnterClick={handleEnterClick} handleWeeklyEnterChange={handleWeeklyEnterChange} />
         <p>Check how far away you are from your weekly goal </p>
         <h1> </h1>

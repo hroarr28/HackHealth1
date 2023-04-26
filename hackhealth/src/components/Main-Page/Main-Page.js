@@ -104,7 +104,7 @@ function MainPage(props) {
     <>
       <div className='Main-Page'>
         <DayButtons Button={Button} getDayName={getDayName} selectedDay={selectedDay} days={days} />
-        <WeeklyProgress stepsRemainder={stepsRemainder} stepRemainderResult={stepRemainderResult} />
+        <WeeklyProgress user={props.user} stepsRemainder={stepsRemainder} stepRemainderResult={stepRemainderResult} />
         <DailyProgress 
           setDaySteps={setDaySteps} 
           getDaySteps={getDaySteps} 
