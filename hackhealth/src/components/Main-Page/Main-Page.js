@@ -5,7 +5,19 @@ import WeeklyProgress from "./Weekly-Progress/WeeklyProgress";
 import { useState } from "react";
 // make a main page component
 
-function MainPage(props) {
+function MainPage() {
+  const [weeklyStepGoal, setWeeklyStepGoal] = useState(0);
+  // create use state to display weekly step goal on click
+  const [showWeeklyStepGoal, setShowWeeklyStepGoal] = useState(false);
+
+  const handleWeeklyEnterChange = (event) => {
+    setWeeklyStepGoal(event.target.value);
+  };
+
+  const handleEnterClick = () => {
+    setShowWeeklyStepGoal(true);
+  };
+
   const days = [
     { id: 1, day: "Monday" },
     { id: 2, day: "Tuesday" },
@@ -17,13 +29,13 @@ function MainPage(props) {
   ];
 
   const [selectedDay, setSelectedDay] = useState("");
-  const [mondaySteps, setMondaySteps] = useState('');
-  const [tuesdaySteps, setTuesdaySteps] = useState('');
-  const [wednesdaySteps, setWednesdaySteps] = useState('');
-  const [thursdaySteps, setThursdaySteps] = useState('');
-  const [fridaySteps, setFridaySteps] = useState('');
-  const [saturdaySteps, setSaturdaySteps] = useState('');
-  const [sundaySteps, setSundaySteps] = useState('');
+  const [mondaySteps, setMondaySteps] = useState("");
+  const [tuesdaySteps, setTuesdaySteps] = useState("");
+  const [wednesdaySteps, setWednesdaySteps] = useState("");
+  const [thursdaySteps, setThursdaySteps] = useState("");
+  const [fridaySteps, setFridaySteps] = useState("");
+  const [saturdaySteps, setSaturdaySteps] = useState("");
+  const [sundaySteps, setSundaySteps] = useState("");
   const [stepsRemainder, setStepsRemainder] = useState(0);
 
   function handleClick(day) {
@@ -58,19 +70,23 @@ function MainPage(props) {
       case 7:
         return sundaySteps;
       default:
-        return '';
+        return "";
     }
   }
-  console.log(typeof mondaySteps)
 
   function stepRemainderResult() {
-    const totalSteps = parseInt(mondaySteps) + parseInt(tuesdaySteps) + parseInt(wednesdaySteps) + parseInt(thursdaySteps) + parseInt(fridaySteps) + parseInt(saturdaySteps) + parseInt(sundaySteps);
-    const remainder = props.weeklyStepGoal - totalSteps;
-    console.log(remainder, "remainder")
+    const totalSteps =
+      parseInt(mondaySteps) +
+      parseInt(tuesdaySteps) +
+      parseInt(wednesdaySteps) +
+      parseInt(thursdaySteps) +
+      parseInt(fridaySteps) +
+      parseInt(saturdaySteps) +
+      parseInt(sundaySteps);
+    const remainder = weeklyStepGoal - totalSteps;
+    console.log(remainder, "remainder");
     setStepsRemainder(remainder);
-  
   }
-
 
   function setDaySteps(dayId, steps) {
     switch (dayId) {
@@ -102,16 +118,29 @@ function MainPage(props) {
 
   return (
     <>
-      <div className='Main-Page'>
-        <DayButtons Button={Button} getDayName={getDayName} selectedDay={selectedDay} days={days} />
-        <WeeklyProgress user={props.user} stepsRemainder={stepsRemainder} stepRemainderResult={stepRemainderResult} />
-        <DailyProgress 
-          setDaySteps={setDaySteps} 
-          getDaySteps={getDaySteps} 
-          selectedDay={selectedDay} 
-          getDayName={getDayName} 
+
+      <div className="Main-Page">
+        <DayButtons
+          Button={Button}
+          getDayName={getDayName}
+          selectedDay={selectedDay}
+          days={days}
+        />
+        <WeeklyProgress
+          stepsRemainder={stepsRemainder}
           stepRemainderResult={stepRemainderResult}
-          
+          showWeeklyStepGoal={showWeeklyStepGoal}
+          weeklyStepGoal={weeklyStepGoal}
+          handleEnterClick={handleEnterClick}
+          handleWeeklyEnterChange={handleWeeklyEnterChange}
+        />
+        <DailyProgress
+          setDaySteps={setDaySteps}
+          getDaySteps={getDaySteps}
+          selectedDay={selectedDay}
+          getDayName={getDayName}
+
+          stepRemainderResult={stepRemainderResult}
         />
       </div>
     </>
