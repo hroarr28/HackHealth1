@@ -1,10 +1,9 @@
-import React from "react";
+import { useEffect } from "react";
 import "./LoginFormStyles.css";
-import {Link} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-function LoginForm({ getUserName, handleClick, user, }) {
-
-  const isLoggedIn = user !== ""? true : false;
+function LoginForm({ getUserName, handleClick, user }) {
+  const isLoggedIn = user !== "" ? true : false;
 
   return (
     <div className="Login-Form">
@@ -27,13 +26,13 @@ function LoginForm({ getUserName, handleClick, user, }) {
           onChange={getUserName}
         />
 
-        {/*<button onClick={(event) => handleClick(event)}>LOGIN</button>*/}
-
-        {isLoggedIn ?(
-        <Link to="/main"><button onClick={handleClick}>LOGIN</button></Link>)
-        : (<Link to="/"><button onClick={handleClick}>LOGIN</button></Link>)
-      }
-
+        <div>
+          {isLoggedIn ? (
+            <button disabled>Logging In...</button>
+          ) : (
+            <button onClick={handleClick}>LOGIN</button>
+          )}
+        </div>
       </form>
     </div>
   );
