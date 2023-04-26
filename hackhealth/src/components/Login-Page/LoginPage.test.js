@@ -10,15 +10,17 @@ test("Input field exists", function () {
   render(<LoginPage getUserName={jest.fn} user={user} handleClick={jest.fn} />);
   //screen.logTestingPlaygroundURL();
   const input = screen.getByRole("textbox");
+  expect(input).toHaveAttribute("type", "text");
   expect(input).toBeVisible();
 });
 
 test("Text in the input field matches user input", function () {
   render(<LoginPage getUserName={jest.fn} user={user} handleClick={jest.fn} />);
-  const name = 'Ash'
-  // const input = screen.getByRole("textbox");
-  // expect(input).toHaveValue();
-})
+  const name = "Ash";
+  const input = screen.getByRole("textbox");
+  userEvent.type(input, name);
+  expect(screen.getByRole("textbox")).toHaveValue(name);
+});
 
 test("Button with 'login' text", function () {
   render(<LoginPage getUserName={jest.fn} user={user} handleClick={jest.fn} />);
