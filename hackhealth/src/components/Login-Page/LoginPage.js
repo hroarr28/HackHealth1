@@ -3,7 +3,7 @@ import "./LoginPageStyles.css";
 import LeftImage from "./Image/Image";
 import LoginForm from "./Login-Form/Login-Form";
 
-function LoginPage({ getUserName, user, handleClick, navigate }) {
+function LoginPage({ getUserName, user, handleClick }) {
   return (
     <div className="login-page">
       <LoginForm
