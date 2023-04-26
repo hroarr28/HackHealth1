@@ -9,16 +9,18 @@ function MainPage() {
   // make a days array with the days of the week inside an id object
 
   const days = [
-    {id: 1, day: "Monday"},
-    {id: 2, day: "Tuesday"},
-    {id: 3, day: "Wednesday"},
-    {id: 4, day: "Thursday"},
-    {id: 5, day: "Friday"},
-    {id: 6, day: "Saturday"},
-    {id: 7, day: "Sunday"},
+    { id: 1, day: "Monday" },
+    { id: 2, day: "Tuesday" },
+    { id: 3, day: "Wednesday" },
+    { id: 4, day: "Thursday" },
+    { id: 5, day: "Friday" },
+    { id: 6, day: "Saturday" },
+    { id: 7, day: "Sunday" },
   ];
 
-  const [selectedDay, setSelectedDay] = useState('');
+  const [selectedDay, setSelectedDay] = useState("");
+
+  //State to store daily steps
 
   function handleClick(day) {
     setSelectedDay(day);
@@ -26,15 +28,13 @@ function MainPage() {
 
   function Button(props) {
     return (
-      <button onClick={() => handleClick(props.day)}>
-        {props.label}
-      </button>
+      <button onClick={() => handleClick(props.day)}>{props.label}</button>
     );
-  };
+  }
 
   function getDayName(dayId) {
-    const day = days.find(d => d.id === dayId);
-    return day ? day.day : '';
+    const day = days.find((d) => d.id === dayId);
+    return day ? day.day : "";
   }
   //map through the days array to find the day by id
 
@@ -46,9 +46,14 @@ function MainPage() {
 
   return (
     <>
-      <div className='Main-Page'>
-              <DayButtons Button={Button} getDayName={getDayName} selectedDay={selectedDay} days={days} />
-        <WeeklyProgress />;
+      <div className="Main-Page">
+        <DayButtons
+          Button={Button}
+          getDayName={getDayName}
+          selectedDay={selectedDay}
+          days={days}
+        />
+        <WeeklyProgress />
         <DailyProgress selectedDay={selectedDay} getDayName={getDayName} />
       </div>
     </>

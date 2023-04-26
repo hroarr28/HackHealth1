@@ -5,29 +5,27 @@ import LoginPage from "../Login-Page/LoginPage";
 import { useState } from "react";
 function App() {
   const [name, setName] = useState("");
-  const [user, setUser] = useState({ username: "" });
+  const [user, setUser] = useState("");
 
   function getUserName(event) {
     setName(event.target.value);
-    console.log(event.target.value);
   }
 
-  function handleClick() {
-    // event.preventDefault()
-    setUser({ username: name });
-    console.log(user.username);
+  function handleClick(event) {
+    event.preventDefault();
+    setUser(name);
+    console.log(name);
   }
 
   return (
     <main className="App">
-      <MainPage/>
       <LoginPage
         getUserName={getUserName}
         handleClick={handleClick}
         user={user}
       />
-      <DayButtons />
-      <LoginPage />
+      {/* <DayButtons /> */}
+      <h1>{user}</h1>
       <MainPage />
     </main>
   );

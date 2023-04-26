@@ -2,7 +2,6 @@ import React from "react";
 import "./LoginFormStyles.css";
 
 function LoginForm({ getUserName, handleClick, user }) {
-  console.log(getUserName);
   return (
     <div className="Login-Form">
       <header>
@@ -23,7 +22,7 @@ function LoginForm({ getUserName, handleClick, user }) {
           required
           onChange={getUserName}
         />
-        <button onClick={handleClick}>LOGIN</button>
+        <button onClick={(event) => handleClick(event)}>LOGIN</button>
       </form>
     </div>
   );
