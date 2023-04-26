@@ -32,6 +32,7 @@ function LoginForm({ getUserName, handleClick, user }) {
           ) : (
             <button onClick={handleClick}>LOGIN</button>
           )}
+
         </div>
       </form>
     </div>

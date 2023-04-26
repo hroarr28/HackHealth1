@@ -15,6 +15,7 @@ function App() {
 
   function handleClick(event) {
     // event.preventDefault();
+
     setUser(name);
     console.log(name);
   }
