@@ -4,8 +4,14 @@ import "./WeeklyGoal.css";
 function WeeklyGoal(props) {
   function handleKeyDown(event) {
     if (event.key === "Enter") {
-      props.handleEnterClick();
-      event.target.value = "";
+      const weeklyStepGoal = event.target.value.trim();
+
+      if (!weeklyStepGoal || isNaN(weeklyStepGoal)) {
+        alert("Please enter a valid number for weekly step goal.");
+      } else {
+        props.handleEnterClick();
+        event.target.value = "";
+      }
     }
   }
 
