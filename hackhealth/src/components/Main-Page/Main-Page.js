@@ -3,6 +3,9 @@ import DailyProgress from "./Daily-Progress/Daily-Progress";
 import DayButtons from "./Left-Side-Nav-Bar/Left-Side-Nav-Bar";
 import WeeklyProgress from "./Weekly-Progress/WeeklyProgress";
 import { useState } from "react";
+import "./main-page.css";
+import "./Left-Side-Nav-Bar/Left-Side-Nav-Bar.css";
+import "./main-page.css";
 // make a main page component
 
 function MainPage(props) {
@@ -44,7 +47,7 @@ function MainPage(props) {
 
   function Button(props) {
     return (
-      <button onClick={() => handleClick(props.day)}>{props.label}</button>
+      <button className="nav-button" onClick={() => handleClick(props.day)}>{props.label}</button>
     );
   }
 
@@ -117,8 +120,9 @@ function MainPage(props) {
   }
 
   return (
-    <>
-      <div className="Main-Page">
+
+      <div className="main">
+        
         <DayButtons
           Button={Button}
           getDayName={getDayName}
@@ -141,8 +145,11 @@ function MainPage(props) {
           getDayName={getDayName}
           stepRemainderResult={stepRemainderResult}
         />
+        <div className='quote-container'>
+          <h2>"here we have the quotes"</h2>
+          <img src="https://www.univariety.com/blog/wp-content/uploads/2014/08/motivational-goals.jpg"/>
+        </div>
       </div>
-    </>
   );
 }
 
