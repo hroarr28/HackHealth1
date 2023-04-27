@@ -81,7 +81,7 @@ function MainPage(props) {
         return fridaySteps;
       case 6:
         return saturdaySteps;
-      case 7:
+      case 0:
         return sundaySteps;
       default:
         return "";
@@ -123,7 +123,7 @@ function MainPage(props) {
       case 6:
         setSaturdaySteps(steps);
         break;
-      case 7:
+      case 0:
         setSundaySteps(steps);
         break;
       default:
