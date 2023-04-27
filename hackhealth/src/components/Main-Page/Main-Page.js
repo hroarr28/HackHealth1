@@ -157,7 +157,7 @@ function MainPage(props) {
         stepRemainderResult={stepRemainderResult}
       />
       <div className="quote-container">
-        <h2>"here we have the quotes"</h2>
+        <h2>"Step by step, you can achieve anything you set your mind to"</h2>
         <img
           src="https://www.univariety.com/blog/wp-content/uploads/2014/08/motivational-goals.jpg"
           alt="an illustrated avatar"
