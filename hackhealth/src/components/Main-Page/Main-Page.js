@@ -77,15 +77,17 @@ function MainPage(props) {
     }
   }
 
+  const totalSteps =
+  parseInt(mondaySteps) +
+  parseInt(tuesdaySteps) +
+  parseInt(wednesdaySteps) +
+  parseInt(thursdaySteps) +
+  parseInt(fridaySteps) +
+  parseInt(saturdaySteps) +
+  parseInt(sundaySteps);
+
   function stepRemainderResult() {
-    const totalSteps =
-      parseInt(mondaySteps) +
-      parseInt(tuesdaySteps) +
-      parseInt(wednesdaySteps) +
-      parseInt(thursdaySteps) +
-      parseInt(fridaySteps) +
-      parseInt(saturdaySteps) +
-      parseInt(sundaySteps);
+
     const remainder = weeklyStepGoal - totalSteps;
     console.log(remainder, "remainder");
     setStepsRemainder(remainder);
@@ -137,6 +139,7 @@ function MainPage(props) {
           handleEnterClick={handleEnterClick}
           handleWeeklyEnterChange={handleWeeklyEnterChange}
           user={props.user}
+          totalSteps={totalSteps}
         />
         <DailyProgress
           setDaySteps={setDaySteps}
