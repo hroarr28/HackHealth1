@@ -11,6 +11,9 @@ function DailyProgress(props) {
   const [inputSteps, setInputSteps] = useState("");
 
   const handleEnterClick = (event) => {
+    if (isNaN(inputSteps)) {
+      alert("Please enter a valid number for daily step goal.");
+    };
     setShowSteps(true);
     props.setDaySteps(props.selectedDay, inputSteps);
     setInputSteps("");
