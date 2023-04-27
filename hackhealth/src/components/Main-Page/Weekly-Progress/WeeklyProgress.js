@@ -21,7 +21,7 @@ function WeeklyProgress(props) {
           handleWeeklyEnterChange={props.handleWeeklyEnterChange}
         />
         <div className="weekly-reminder">
-        <h3>Check how far away you are from your weekly goal! </h3>
+        <h2>Check how far away you are from your weekly goal! </h2>
         <button
           onClick={() => {
             props.stepRemainderResult();

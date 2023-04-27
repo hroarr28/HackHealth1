@@ -17,26 +17,33 @@ function DailyProgress(props) {
 
   return (
     <div className='Daily-Progress'>
-       <div className='Step-Counter'>
-        <h3>How many steps did you do today?</h3>
-        <img
-          src='https://t3.ftcdn.net/jpg/02/68/83/92/360_F_268839256_ih7a6ashzMP99VaQ3EGnqKFZcTd35S9e.jpg'
-          alt='steps'
-        />
-        <input
-          className='Step-Input'
-          type='text'
-          placeholder='Enter your steps'
-          value={inputSteps}
-          onChange={(event) => setInputSteps(event.target.value)}
-        />
-        <button onClick={ handleEnterClick}>Enter</button>
-        
-      </div>
-      <div className='day-name'>
-        {showSteps && <div className='day-name-wrapper'><h2>{props.getDayName(props.selectedDay)}</h2><h2>{props.getDaySteps(props.selectedDay)}</h2></div>}
+      <h2>How many steps did you do today?</h2>
+      <img
+        src='https://i.ibb.co/H2gvXjd/Untitled-design-14.png'
+        alt='Untitled-design-14'
+        border='0'
+      />
+      <div className='step-container'>
+        <div className='Step-Counter'>
+          <input
+            className='Step-Input'
+            type='text'
+            placeholder='Enter your steps'
+            value={inputSteps}
+            onChange={(event) => setInputSteps(event.target.value)}
+          />
+          <button onClick={handleEnterClick}>Enter</button>
+        </div>
+        <div className='day-name'>
+          {showSteps && (
+            <div className='day-name-wrapper'>
+              <h2>{props.getDayName(props.selectedDay)}</h2>
+              <h2>{props.getDaySteps(props.selectedDay)}</h2>
+            </div>
+          )}
         </div>
       </div>
+    </div>
   );
 }
 

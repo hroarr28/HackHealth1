@@ -4,8 +4,8 @@ import { useState } from "react";
 function Distance() {
   return (
     <div className="distance">
-      <h3>Distance</h3>
-      <p>1000 km</p>
+      <h2>Distance</h2>
+      <h3>1000 km</h3>
     </div>
   );
 }

@@ -5,6 +5,7 @@
     grid-template-areas: 
       "header header header"
       "Goal reminder distance";
+      gap: 0px 20px;
 }
 
 .welcome-header{
@@ -13,28 +14,45 @@
     justify-content: center;
     align-items: center;
     gap: 30px;
-    background-color: #3E73B1;
+    background-color:#2b5376 ;
     grid-area: header;
     padding: 3px;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
 }
+
 .weekly-reminder{
     grid-area: reminder;
-    background-color: #81A4CD;
+    background-color: #82a8d068;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    border-radius: 10px; 
+    margin-left: 20px;
+    
+    
+    margin-top: 20px;
+   
 }
+
 .weekly-goal{
     padding: 10px;
     grid-area: Goal;
-    background-color: #F17300;
+    background-color: #f17400ec;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     gap: 10px;
+    border-radius: 10px; 
+    margin-left: 20px;
+    margin-top: 20px;
+  
+   
 }
 .goal-letter{
     display: flex;
@@ -55,12 +73,17 @@
 }
 .distance{
     grid-area: distance;
-    background-color: #F17300;
+    background-color: #82a8d068;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+justify-content: space-around;
     align-items: center;
+    border-radius: 10px; 
+  
+    margin-right: 20px;
+    
+    margin-top: 20px;
 }
 
 .welcome-header img{
@@ -87,9 +110,12 @@
     color: #F17300;
 }
 
-.span-reminder{
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: black;
+.span-reminder {
+    color: #f1f1f1;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 300;
     text-decoration: underline;
-}
+  }
+
+
+
