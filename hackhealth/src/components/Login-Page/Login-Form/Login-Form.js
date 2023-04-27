@@ -5,6 +5,12 @@ import "./LoginFormStyles.css";
 function LoginForm({ getUserName, handleClick, user }) {
   const isLoggedIn = user !== "" ? true : false;
 
+  function handleKeyDown(event) {
+    if (event.key === "Enter") {
+      handleClick();
+    }
+  }
+
   return (
     <div className="Login-Form">
       <header>
@@ -24,6 +30,7 @@ function LoginForm({ getUserName, handleClick, user }) {
           name="username"
           required
           onChange={getUserName}
+          onKeyDown={handleKeyDown}
         />
 
         <div>
@@ -32,7 +39,6 @@ function LoginForm({ getUserName, handleClick, user }) {
           ) : (
             <button onClick={handleClick}>LOGIN</button>
           )}
-
         </div>
       </form>
     </div>

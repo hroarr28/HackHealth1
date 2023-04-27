@@ -16,8 +16,13 @@ function DailyProgress(props) {
     setInputSteps("");
   };
 
-  return (
+  function handleKeyDown(event) {
+    if (event.key === "Enter") {
+      handleEnterClick();
+    }
+  }
 
+  return (
     <div className="Daily-Progress">
       <div className="day-name">
         <h1>{props.getDayName(props.selectedDay)}</h1>
@@ -35,6 +40,7 @@ function DailyProgress(props) {
           placeholder="Enter your steps"
           value={inputSteps}
           onChange={(event) => setInputSteps(event.target.value)}
+          onKeyDown={handleKeyDown}
         />
 
         <button
@@ -46,16 +52,18 @@ function DailyProgress(props) {
         </button>
         {showSteps && <h2>{props.getDaySteps(props.selectedDay)}</h2>}
       </div>
-     
 
-        <button onClick={ handleEnterClick}>Enter</button>
-        
-     
-      <div className='day-name'>
-        {showSteps && <div className='day-name-wrapper'><h2>{props.getDayName(props.selectedDay)}</h2><h2>{props.getDaySteps(props.selectedDay)}</h2></div>}
+      <button onClick={handleEnterClick}>Enter</button>
 
-        </div>
+      <div className="day-name">
+        {showSteps && (
+          <div className="day-name-wrapper">
+            <h2>{props.getDayName(props.selectedDay)}</h2>
+            <h2>{props.getDaySteps(props.selectedDay)}</h2>
+          </div>
+        )}
       </div>
+    </div>
   );
 }
 
