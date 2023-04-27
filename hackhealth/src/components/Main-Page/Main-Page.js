@@ -29,13 +29,13 @@ function MainPage(props) {
   ];
 
   const [selectedDay, setSelectedDay] = useState("");
-  const [mondaySteps, setMondaySteps] = useState("");
-  const [tuesdaySteps, setTuesdaySteps] = useState("");
-  const [wednesdaySteps, setWednesdaySteps] = useState("");
-  const [thursdaySteps, setThursdaySteps] = useState("");
-  const [fridaySteps, setFridaySteps] = useState("");
-  const [saturdaySteps, setSaturdaySteps] = useState("");
-  const [sundaySteps, setSundaySteps] = useState("");
+  const [mondaySteps, setMondaySteps] = useState(0);
+  const [tuesdaySteps, setTuesdaySteps] = useState(0);
+  const [wednesdaySteps, setWednesdaySteps] = useState(0);
+  const [thursdaySteps, setThursdaySteps] = useState(0);
+  const [fridaySteps, setFridaySteps] = useState(0);
+  const [saturdaySteps, setSaturdaySteps] = useState(0);
+  const [sundaySteps, setSundaySteps] = useState(0);
   const [stepsRemainder, setStepsRemainder] = useState(0);
 
   function handleClick(day) {
