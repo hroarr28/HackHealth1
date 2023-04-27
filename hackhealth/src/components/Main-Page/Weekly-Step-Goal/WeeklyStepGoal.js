@@ -13,7 +13,7 @@ function WeeklyGoal(props) {
       </div>
       <div className="goal-letter">
       <h3>Weekly Step Goal</h3>
-      {props.showWeeklyStepGoal && <h2 className="step-goal">{props.weeklyStepGoal} Steeps</h2>}
+      {props.showWeeklyStepGoal && <h2 className="step-goal">{props.weeklyStepGoal} Steps</h2>}
       </div>
     
     </div>
