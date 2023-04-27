@@ -27,42 +27,38 @@ function DailyProgress(props) {
 
   return (
     <div className="Daily-Progress">
-      <div className="day-name">
-        <h1>{props.getDayName(props.selectedDay)}</h1>
-      </div>
-      <div className="Step-Counter">
-        <p>How many steps did you do today?</p>
-
-        <img
-          src="https://t3.ftcdn.net/jpg/02/68/83/92/360_F_268839256_ih7a6ashzMP99VaQ3EGnqKFZcTd35S9e.jpg"
-          alt="steps"
-        />
-        <input
-          className="Step-Input"
-          type="text"
-          placeholder="Enter your steps"
-          value={inputSteps}
-          onChange={(event) => setInputSteps(event.target.value)}
-          onKeyDown={handleKeyDown}
-        />
-
-        <button
-          onClick={(event) => {
-            handleEnterClick(event);
-          }}
-        >
-          Enter
-        </button>
-        {showSteps && <h2>{props.getDaySteps(props.selectedDay)}</h2>}
-      </div>
-
-      <div className="day-name">
-        {showSteps && (
-          <div className="day-name-wrapper">
-            <h2>{props.getDayName(props.selectedDay)}</h2>
-            <h2>{props.getDaySteps(props.selectedDay)}</h2>
-          </div>
-        )}
+      <h2>How many steps did you do today?</h2>
+      <img
+        src="https://i.ibb.co/H2gvXjd/Untitled-design-14.png"
+        alt="Untitled-design-14"
+        border="0"
+      />
+      <div className="step-container">
+        <div className="Step-Counter">
+          <input
+            className="Step-Input"
+            type="text"
+            placeholder="Enter your steps"
+            value={inputSteps}
+            onChange={(event) => setInputSteps(event.target.value)}
+            onKeyDown={handleKeyDown}
+          />
+          <button
+            onClick={(event) => {
+              handleEnterClick(event);
+            }}
+          >
+            Enter
+          </button>
+        </div>
+        <div className="day-name">
+          {showSteps && (
+            <div className="day-name-wrapper">
+              <h2>{props.getDayName(props.selectedDay)}</h2>
+              <h2>{props.getDaySteps(props.selectedDay)}</h2>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

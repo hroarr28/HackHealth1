@@ -7,9 +7,9 @@ function Distance(props) {
   const distanceInKm = (steps * kmPerStep).toFixed(2);
 
   return (
-    <div>
-      <h3>Distance:</h3>
-      <p>{distanceInKm} km</p>
+    <div className="distance">
+      <h2>Distance:</h2>
+      <h3>{distanceInKm} km</h3>
     </div>
   );
 }

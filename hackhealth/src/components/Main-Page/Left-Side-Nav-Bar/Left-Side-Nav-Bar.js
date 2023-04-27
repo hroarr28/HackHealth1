@@ -4,6 +4,7 @@ import { useState } from "react";
 
 function DayButtons(props) {
   return (
+<<<<<<< HEAD
     <div className="nav-container">
       <div className="buttons">
         <img
@@ -11,6 +12,12 @@ function DayButtons(props) {
           alt="footprint-logo"
           className="foot-logo"
         />
+=======
+    <div className='nav-container'>
+      <img src="https://i.ibb.co/nfd809h/Hack-11.png" alt="footprint-logo" className='foot-logo' />
+      <div className='buttons'>
+        
+>>>>>>> f2d333e75983cd97552af55dfe2caebabcfe0767
         <props.Button label="M" day={1} />
         <props.Button label="T" day={2} />
         <props.Button label="W" day={3} />

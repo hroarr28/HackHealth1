@@ -1,35 +1,36 @@
-.day-name-wrapper{
-    border: solid #3E73B1 10px ;
-    background-color: #81A4CD;
-    border-radius: 20px;
-    padding: 5%;
+.day-name-wrapper {
+  background-color: #81a4cd;
+  border-radius: 20px;
 }
-.day-name{
-  width: 45%;
+.day-name {
+  width: 50%;
+  margin-left: 20px ;
 }
 
 .Daily-Progress {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
   padding: 20px;
 }
 
-.Daily-Progress > * {
-  flex: 1;
-  margin: 10px;
+.step-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .Step-Counter {
-  background-color: #F17300;
-  display:flex;
+  display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
 
 .Progress-Text {
-  display : flex;
+  display: flex;
 }
 
 .Step-Input {
@@ -46,4 +47,36 @@
   width: 50px;
   max-height: 80%;
   align-items: center;
+}
+
+.Daily-Progress img {
+  height: 9em;
+  width: 9em;
+}
+
+.step-container button {
+  width: 8rem;
+  height: 2.2rem;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1rem;
+  border: #f17300 2px solid;
+  background-color: #f17300;
+  color: white;
+  cursor: pointer;
+}
+
+.step-container button:hover {
+  border: white 2px solid;
+  background-color: white;
+  color: #f17300;
+}
+
+.step-container input {
+  width: 12rem;
+  height: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1rem;
+  outline: none;
 }
