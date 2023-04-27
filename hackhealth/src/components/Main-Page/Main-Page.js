@@ -18,6 +18,9 @@ function MainPage(props) {
   };
 
   const handleEnterClick = () => {
+    if (isNaN(weeklyStepGoal)) {
+      alert("Please enter a valid number for weekly step goal.");
+    }
     setShowWeeklyStepGoal(true);
   };
 
