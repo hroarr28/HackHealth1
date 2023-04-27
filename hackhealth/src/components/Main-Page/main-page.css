@@ -1,0 +1,66 @@
+*{
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.main{
+width: 100%;
+height: 100vh;
+display: grid; 
+  grid-template-columns: 0.1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr 1fr; 
+  grid-template-areas: 
+    "navBar week week "
+    "navBar week week "
+    "navBar daily Quotes"
+    "navBar daily Quotes "
+    
+}
+.nav-container{
+    grid-area: navBar; 
+    background-color: #054A91;
+} 
+
+.weekly-container{
+    border: 1px solid black;
+    grid-area: week;
+}
+.Daily-Progress{
+    grid-area: daily;
+    background-color: #F17300;
+}
+
+/* Here we have to style the elements of left-side-nav-bar due to conflicts*/
+.nav-container img{
+    width: 100px;
+    height: 100px;
+}
+.nav-button{
+    height: 2.5em;
+    width: 2.3em;
+    font-size: 1.3em;
+    font-weight: 200;
+    color: #FFFFFF;
+    border-radius: 7px;
+    background-color: #81A4CD;
+}
+.nav-button:hover{
+    background-color: #FFFFFF;
+    color: #054A91;
+    cursor: pointer;
+}
+/* Here we have to style the elements of quotes*/
+.quote-container img{
+    width: 25rem;
+    height: 15rem;
+    border: #054A91 solid 10px;
+    border-radius: 20px;
+}
+.quote-container{
+    grid-area: Quotes;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #81A4CD;
+}

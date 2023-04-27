@@ -17,12 +17,14 @@ function DailyProgress(props) {
   };
 
   return (
+
     <div className="Daily-Progress">
       <div className="day-name">
         <h1>{props.getDayName(props.selectedDay)}</h1>
       </div>
       <div className="Step-Counter">
         <p>How many steps did you do today?</p>
+
         <img
           src="https://t3.ftcdn.net/jpg/02/68/83/92/360_F_268839256_ih7a6ashzMP99VaQ3EGnqKFZcTd35S9e.jpg"
           alt="steps"
@@ -34,6 +36,7 @@ function DailyProgress(props) {
           value={inputSteps}
           onChange={(event) => setInputSteps(event.target.value)}
         />
+
         <button
           onClick={(event) => {
             handleEnterClick(event);
@@ -43,18 +46,16 @@ function DailyProgress(props) {
         </button>
         {showSteps && <h2>{props.getDaySteps(props.selectedDay)}</h2>}
       </div>
-      <div className="stats">
-        <h2>Stats and Badges</h2>
-        <div className="Progress-Text">
-          <p>Congrats blah blah</p>
-          <p>Congrats blah blah</p>
-          <p>Congrats blah blah</p>
-          <img src="./medal (1).png" alt="steps" />
-          <img src="./medal (2).png" alt="steps" />
-          <img src="./medal.png" alt="steps" />
+     
+
+        <button onClick={ handleEnterClick}>Enter</button>
+        
+     
+      <div className='day-name'>
+        {showSteps && <div className='day-name-wrapper'><h2>{props.getDayName(props.selectedDay)}</h2><h2>{props.getDaySteps(props.selectedDay)}</h2></div>}
+
         </div>
       </div>
-    </div>
   );
 }
 

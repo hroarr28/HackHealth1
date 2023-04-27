@@ -1,3 +1,13 @@
+.day-name-wrapper{
+    border: solid #3E73B1 10px ;
+    background-color: #81A4CD;
+    border-radius: 20px;
+    padding: 5%;
+}
+.day-name{
+  width: 45%;
+}
+
 .Daily-Progress {
   display: flex;
   flex-direction: row;
