@@ -7,7 +7,7 @@ function WeeklyGoal(props) {
       const weeklyStepGoal = event.target.value.trim();
 
       if (!weeklyStepGoal || isNaN(weeklyStepGoal)) {
-        alert("Please enter a valid number for weekly step goal.");
+        alert("You silly bootcamper! You should know what a number is!");
       } else {
         props.handleEnterClick();
         event.target.value = "";
