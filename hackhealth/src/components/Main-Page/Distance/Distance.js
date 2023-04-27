@@ -1,11 +1,15 @@
 import { useState } from "react";
 
+function Distance(props) {
+  const steps = props.steps;
+  const kmPerStep = 0.000762; // conversion rate from steps to kilometers
 
-function Distance() {
+  const distanceInKm = (steps * kmPerStep).toFixed(2);
+
   return (
-    <div className="distance">
-      <h3>Distance</h3>
-      <p>1000 km</p>
+    <div>
+      <h3>Distance:</h3>
+      <p>{distanceInKm}</p>
     </div>
   );
 }
