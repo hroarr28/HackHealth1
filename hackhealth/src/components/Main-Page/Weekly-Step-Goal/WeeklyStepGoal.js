@@ -23,6 +23,7 @@ function WeeklyGoal(props) {
           src="https://i.ibb.co/Chq4sQm/Untitled-300-300px.png"
           alt="steps-shoes"
         ></img>
+
         <input
           onChange={props.handleWeeklyEnterChange}
           type="text"

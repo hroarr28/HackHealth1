@@ -17,24 +17,28 @@ function MainPage(props) {
     setWeeklyStepGoal(event.target.value);
   };
 
-  const handleEnterClick = () => {
-    if (isNaN(weeklyStepGoal)) {
+  const handleEnterClick = (event) => {
+    if (!weeklyStepGoal || isNaN(weeklyStepGoal)) {
       alert("Please enter a valid number for weekly step goal.");
+    } else {
+      setShowWeeklyStepGoal(true);
     }
-    setShowWeeklyStepGoal(true);
   };
 
   const days = [
+    { id: 0, day: "Sunday" },
     { id: 1, day: "Monday" },
     { id: 2, day: "Tuesday" },
     { id: 3, day: "Wednesday" },
     { id: 4, day: "Thursday" },
     { id: 5, day: "Friday" },
     { id: 6, day: "Saturday" },
-    { id: 7, day: "Sunday" },
   ];
 
-  const [selectedDay, setSelectedDay] = useState("");
+  const today = new Date().getDay();
+  const todaysDay = days.find((d) => d.id === today);
+
+  const [selectedDay, setSelectedDay] = useState(todaysDay.id);
   const [mondaySteps, setMondaySteps] = useState(0);
   const [tuesdaySteps, setTuesdaySteps] = useState(0);
   const [wednesdaySteps, setWednesdaySteps] = useState(0);
@@ -43,6 +47,8 @@ function MainPage(props) {
   const [saturdaySteps, setSaturdaySteps] = useState(0);
   const [sundaySteps, setSundaySteps] = useState(0);
   const [stepsRemainder, setStepsRemainder] = useState(0);
+
+  console.log(selectedDay.day);
 
   function handleClick(day) {
     setSelectedDay(day);
