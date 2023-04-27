@@ -1,15 +1,18 @@
 import { useState } from "react";
 import Distance from "../Distance/Distance";
 import WeeklyGoal from "../Weekly-Step-Goal/WeeklyStepGoal";
+import "./Weekly-Progress.css"
 
 // props needed: weekly step goal
 //               daily steps
 
 function WeeklyProgress(props) {
   return (
-    <div>
-      <div>
-        <h1>Welcome Back, {props.user}!</h1>
+    <div className="weekly-container">
+      <div className="welcome-header">
+      <h1>Welcome Back, {props.user}!</h1>
+      <img src="https://i.ibb.co/LCrMT1R/Untitled-800-800px-300-300px.png" alt="avatar-img" className=""/>
+      </div>
         <WeeklyGoal
           stepRemainderResult={props.stepRemainderResult}
           showWeeklyStepGoal={props.showWeeklyStepGoal}
@@ -17,9 +20,8 @@ function WeeklyProgress(props) {
           handleEnterClick={props.handleEnterClick}
           handleWeeklyEnterChange={props.handleWeeklyEnterChange}
         />
-
-        <p>Check how far away you are from your weekly goal </p>
-        <h1> </h1>
+        <div className="weekly-reminder">
+        <h3>Check how far away you are from your weekly goal! </h3>
         <button
           onClick={() => {
             props.stepRemainderResult();
@@ -27,9 +29,8 @@ function WeeklyProgress(props) {
         >
           Check here
         </button>
-        <h3>{props.stepsRemainder} steps away</h3>
-      </div>
-      <div></div>
+        <h3><span className="span-reminder">{props.stepsRemainder}</span> steps away</h3>
+        </div>
       <div>
         <Distance />
       </div>
