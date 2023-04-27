@@ -7,8 +7,9 @@ function DayButtons(props) {
 
   return (
     <div className='nav-container'>
+      <img src="https://i.ibb.co/nfd809h/Hack-11.png" alt="footprint-logo" className='foot-logo' />
       <div className='buttons'>
-        <img src="https://i.ibb.co/nfd809h/Hack-11.png" alt="footprint-logo" className='foot-logo' />
+        
         <props.Button label="M" day={1} />
         <props.Button label="T" day={2} />
         <props.Button label="W" day={3} />
