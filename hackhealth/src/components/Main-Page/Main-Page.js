@@ -18,6 +18,9 @@ function MainPage(props) {
   };
 
   const handleEnterClick = () => {
+    if (isNaN(weeklyStepGoal)) {
+      alert("Please enter a valid number for weekly step goal.");
+    }
     setShowWeeklyStepGoal(true);
   };
 
@@ -32,13 +35,13 @@ function MainPage(props) {
   ];
 
   const [selectedDay, setSelectedDay] = useState("");
-  const [mondaySteps, setMondaySteps] = useState("");
-  const [tuesdaySteps, setTuesdaySteps] = useState("");
-  const [wednesdaySteps, setWednesdaySteps] = useState("");
-  const [thursdaySteps, setThursdaySteps] = useState("");
-  const [fridaySteps, setFridaySteps] = useState("");
-  const [saturdaySteps, setSaturdaySteps] = useState("");
-  const [sundaySteps, setSundaySteps] = useState("");
+  const [mondaySteps, setMondaySteps] = useState(0);
+  const [tuesdaySteps, setTuesdaySteps] = useState(0);
+  const [wednesdaySteps, setWednesdaySteps] = useState(0);
+  const [thursdaySteps, setThursdaySteps] = useState(0);
+  const [fridaySteps, setFridaySteps] = useState(0);
+  const [saturdaySteps, setSaturdaySteps] = useState(0);
+  const [sundaySteps, setSundaySteps] = useState(0);
   const [stepsRemainder, setStepsRemainder] = useState(0);
 
   function handleClick(day) {
@@ -47,7 +50,9 @@ function MainPage(props) {
 
   function Button(props) {
     return (
-      <button className="nav-button" onClick={() => handleClick(props.day)}>{props.label}</button>
+      <button className="nav-button" onClick={() => handleClick(props.day)}>
+        {props.label}
+      </button>
     );
   }
 
@@ -77,15 +82,16 @@ function MainPage(props) {
     }
   }
 
+  const totalSteps =
+    parseInt(mondaySteps) +
+    parseInt(tuesdaySteps) +
+    parseInt(wednesdaySteps) +
+    parseInt(thursdaySteps) +
+    parseInt(fridaySteps) +
+    parseInt(saturdaySteps) +
+    parseInt(sundaySteps);
+
   function stepRemainderResult() {
-    const totalSteps =
-      parseInt(mondaySteps) +
-      parseInt(tuesdaySteps) +
-      parseInt(wednesdaySteps) +
-      parseInt(thursdaySteps) +
-      parseInt(fridaySteps) +
-      parseInt(saturdaySteps) +
-      parseInt(sundaySteps);
     const remainder = weeklyStepGoal - totalSteps;
     console.log(remainder, "remainder");
     setStepsRemainder(remainder);
@@ -120,36 +126,38 @@ function MainPage(props) {
   }
 
   return (
-
-      <div className="main">
-        
-        <DayButtons
-          Button={Button}
-          getDayName={getDayName}
-          selectedDay={selectedDay}
-          days={days}
+    <div className="main">
+      <DayButtons
+        Button={Button}
+        getDayName={getDayName}
+        selectedDay={selectedDay}
+        days={days}
+      />
+      <WeeklyProgress
+        stepsRemainder={stepsRemainder}
+        stepRemainderResult={stepRemainderResult}
+        showWeeklyStepGoal={showWeeklyStepGoal}
+        weeklyStepGoal={weeklyStepGoal}
+        handleEnterClick={handleEnterClick}
+        handleWeeklyEnterChange={handleWeeklyEnterChange}
+        user={props.user}
+        totalSteps={totalSteps}
+      />
+      <DailyProgress
+        setDaySteps={setDaySteps}
+        getDaySteps={getDaySteps}
+        selectedDay={selectedDay}
+        getDayName={getDayName}
+        stepRemainderResult={stepRemainderResult}
+      />
+      <div className="quote-container">
+        <h2>"here we have the quotes"</h2>
+        <img
+          src="https://www.univariety.com/blog/wp-content/uploads/2014/08/motivational-goals.jpg"
+          alt="an illustrated avatar"
         />
-        <WeeklyProgress
-          stepsRemainder={stepsRemainder}
-          stepRemainderResult={stepRemainderResult}
-          showWeeklyStepGoal={showWeeklyStepGoal}
-          weeklyStepGoal={weeklyStepGoal}
-          handleEnterClick={handleEnterClick}
-          handleWeeklyEnterChange={handleWeeklyEnterChange}
-          user={props.user}
-        />
-        <DailyProgress
-          setDaySteps={setDaySteps}
-          getDaySteps={getDaySteps}
-          selectedDay={selectedDay}
-          getDayName={getDayName}
-          stepRemainderResult={stepRemainderResult}
-        />
-        <div className='quote-container'>
-          <h2>"here we have the quotes"</h2>
-          <img src="https://www.univariety.com/blog/wp-content/uploads/2014/08/motivational-goals.jpg"/>
-        </div>
       </div>
+    </div>
   );
 }
 

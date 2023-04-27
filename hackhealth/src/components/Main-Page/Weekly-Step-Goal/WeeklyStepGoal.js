@@ -1,7 +1,20 @@
+
 import {useState} from "react";
 import "./WeeklyGoal.css";
 
 function WeeklyGoal(props) {
+  function handleKeyDown(event) {
+    if (event.key === "Enter") {
+      const weeklyStepGoal = event.target.value.trim();
+
+      if (!weeklyStepGoal || isNaN(weeklyStepGoal)) {
+        alert("You silly bootcamper! You should know what a number is!");
+      } else {
+        props.handleEnterClick();
+        event.target.value = "";
+      }
+    }
+  }
   return (
     <div className='weekly-goal'>
       
@@ -13,7 +26,9 @@ function WeeklyGoal(props) {
       <div className='goal-container'>
         <div className='goal-form'>
           
-          <input className="weekly-input" onChange={props.handleWeeklyEnterChange} type='text' />
+          <input className="weekly-input" onChange={props.handleWeeklyEnterChange} type='text'
+          onKeyDown={handleKeyDown}
+          />
           <button onClick={props.handleEnterClick}>Submit</button>
         </div>
         <div className='goal-letter'>
@@ -21,6 +36,7 @@ function WeeklyGoal(props) {
             <h2 className='step-goal'>{props.weeklyStepGoal} Steps</h2>
           )}
         </div>
+
       </div>
     </div>
   );

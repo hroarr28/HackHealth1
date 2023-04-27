@@ -32,7 +32,7 @@ function WeeklyProgress(props) {
         <h3><span className="span-reminder">{props.stepsRemainder}</span> steps away</h3>
         </div>
       <div>
-        <Distance />
+        <Distance totalSteps={props.totalSteps}/>
       </div>
     </div>
   );
