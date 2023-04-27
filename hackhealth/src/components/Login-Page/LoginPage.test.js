@@ -6,18 +6,52 @@ import LoginPage from "./LoginPage";
 
 const user = "";
 
+test("Profile picture exists", function () {
+  render(<LoginPage getUserName={jest.fn} user={user} handleClick={jest.fn} />);
+  //screen.logTestingPlaygroundURL();
+  const image = screen.getByRole("img", { name: "AvatarImg" });
+  expect(image).toBeVisible();
+});
+
+test("'Username' heading exists", function () {
+  render(<LoginPage getUserName={jest.fn} user={user} handleClick={jest.fn} />);
+  //screen.logTestingPlaygroundURL();
+  const heading = screen.getByRole("heading", { name: "Username" });
+  expect(heading).toBeVisible();
+});
+
 test("Input field exists", function () {
   render(<LoginPage getUserName={jest.fn} user={user} handleClick={jest.fn} />);
   //screen.logTestingPlaygroundURL();
   const input = screen.getByRole("textbox");
+  expect(input).toHaveAttribute("type", "text");
   expect(input).toBeVisible();
 });
 
-// test("Button with text Add To List appears on screen", function () {
-//   render(<AddItem addToList={jest.fn} buttonText={buttonText} />);
-//   const button = screen.getByRole("button", { name: buttonText });
-//   expect(button).toBeVisible();
-// });
+test("Text in the input field matches user input", function () {
+  render(<LoginPage getUserName={jest.fn} user={user} handleClick={jest.fn} />);
+  const name = "Ash";
+  const input = screen.getByRole("textbox");
+  userEvent.type(input, name);
+  expect(screen.getByRole("textbox")).toHaveValue(name);
+});
+
+test("Button with 'login' text", function () {
+  render(<LoginPage getUserName={jest.fn} user={user} handleClick={jest.fn} />);
+  const button = screen.getByRole("button", { name: "LOGIN" });
+  expect(button).toBeVisible();
+});
+
+//this test fails as the button isn't actually disabled when there's no input - think this is because an alert comes up instead?
+test('login button disabled when there is no username input', function () {
+  render(<LoginPage getUserName={jest.fn} user={user} handleClick={jest.fn} />);
+  const button = screen.getByRole("button", { name: "LOGIN" });
+  const input = screen.getByRole('textbox');
+  expect(button).toBeDisabled();
+  userEvent.type(input, '');
+  expect(button).toBeEnabled();
+});
+
 
 //import the component☑️
 //target the input field

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Left-Side-Nav-Bar.css';
+import "./Left-Side-Nav-Bar.css"
 import { useState } from 'react';
 
 function DayButtons(props) {
@@ -8,7 +8,8 @@ function DayButtons(props) {
   return (
     <div className='nav-container'>
       <div className='buttons'>
-      <props.Button label="M" day={1} />
+        <img src="https://i.ibb.co/nfd809h/Hack-11.png" alt="footprint-logo" className='foot-logo' />
+        <props.Button label="M" day={1} />
         <props.Button label="T" day={2} />
         <props.Button label="W" day={3} />
         <props.Button label="T" day={4} />

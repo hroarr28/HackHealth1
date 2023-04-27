@@ -1,23 +1,49 @@
+.day-name-wrapper{
+    border: solid #3E73B1 10px ;
+    background-color: #81A4CD;
+    border-radius: 20px;
+    padding: 5%;
+}
+.day-name{
+  width: 45%;
+}
+
 .Daily-Progress {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  .Daily-Progress > * {
-    flex: 1;
-    margin: 10px;
-  }
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
 
-  .Step-Counter {
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+.Daily-Progress > * {
+  flex: 1;
+  margin: 10px;
+}
 
-  .Progress-Text {
-    display : flex;
-    
-  }
+.Step-Counter {
+  background-color: #F17300;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Progress-Text {
+  display : flex;
+}
+
+.Step-Input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: aliceblue;
+  max-width: 200px;
+}
+
+.Step-Counter img {
+  height: 50px;
+  width: 50px;
+  max-height: 80%;
+  align-items: center;
+}
