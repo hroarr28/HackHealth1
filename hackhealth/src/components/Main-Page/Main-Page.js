@@ -47,7 +47,9 @@ function MainPage(props) {
 
   function Button(props) {
     return (
-      <button className="nav-button" onClick={() => handleClick(props.day)}>{props.label}</button>
+      <button className="nav-button" onClick={() => handleClick(props.day)}>
+        {props.label}
+      </button>
     );
   }
 
@@ -120,36 +122,37 @@ function MainPage(props) {
   }
 
   return (
-
-      <div className="main">
-        
-        <DayButtons
-          Button={Button}
-          getDayName={getDayName}
-          selectedDay={selectedDay}
-          days={days}
+    <div className="main">
+      <DayButtons
+        Button={Button}
+        getDayName={getDayName}
+        selectedDay={selectedDay}
+        days={days}
+      />
+      <WeeklyProgress
+        stepsRemainder={stepsRemainder}
+        stepRemainderResult={stepRemainderResult}
+        showWeeklyStepGoal={showWeeklyStepGoal}
+        weeklyStepGoal={weeklyStepGoal}
+        handleEnterClick={handleEnterClick}
+        handleWeeklyEnterChange={handleWeeklyEnterChange}
+        user={props.user}
+      />
+      <DailyProgress
+        setDaySteps={setDaySteps}
+        getDaySteps={getDaySteps}
+        selectedDay={selectedDay}
+        getDayName={getDayName}
+        stepRemainderResult={stepRemainderResult}
+      />
+      <div className="quote-container">
+        <h2>"here we have the quotes"</h2>
+        <img
+          src="https://www.univariety.com/blog/wp-content/uploads/2014/08/motivational-goals.jpg"
+          alt="an illustrated avatar"
         />
-        <WeeklyProgress
-          stepsRemainder={stepsRemainder}
-          stepRemainderResult={stepRemainderResult}
-          showWeeklyStepGoal={showWeeklyStepGoal}
-          weeklyStepGoal={weeklyStepGoal}
-          handleEnterClick={handleEnterClick}
-          handleWeeklyEnterChange={handleWeeklyEnterChange}
-          user={props.user}
-        />
-        <DailyProgress
-          setDaySteps={setDaySteps}
-          getDaySteps={getDaySteps}
-          selectedDay={selectedDay}
-          getDayName={getDayName}
-          stepRemainderResult={stepRemainderResult}
-        />
-        <div className='quote-container'>
-          <h2>"here we have the quotes"</h2>
-          <img src="https://www.univariety.com/blog/wp-content/uploads/2014/08/motivational-goals.jpg"/>
-        </div>
       </div>
+    </div>
   );
 }
 
