@@ -11,8 +11,6 @@ function LoginPage({ getUserName, user, handleClick }) {
         handleClick={handleClick}
         user={user}
       />
-
-      <LeftImage />
     </div>
   );
 }
