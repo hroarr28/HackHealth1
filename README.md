@@ -6,7 +6,7 @@ An MVP built in React that helps you to keep track of your daily steps and your 
 
 ## Screenshots
 
-![HackHealth gif](HackHealth.gif)
+![HackHealth gif](./hackhealth/images/HackHealth.gif)
 
 ## Motivation
 
@@ -57,10 +57,3 @@ Start the application:
 4. Use the navigation bar on the left hand side to select other days and see what you entered for them.
 5. Press the check here button to compare how well you have done comapred to your weekly goal
 6. You can also see the distance you have covered in kilometers on the right.
-
-## Contributors
-
-[![](https://https://github.com/hroarr28?size=10)](https://github.com/hroarr28)
-[![](https://github.com/ashbsmith?size=10)](https://github.com/ashbsmith)
-[![](https://github.com/dlrodev92?size=10)](https://github.com/dlrodev92)
-[![](https://github.com/anjiqbal?size=10)](https://github.com/anjiqbal)
