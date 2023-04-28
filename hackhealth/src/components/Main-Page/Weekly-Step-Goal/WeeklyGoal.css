@@ -40,7 +40,7 @@
 }
 .weekly-container img {
   width: 8rem;
-
+  height: 8rem; /*anj added*/
   align-self: center;
 }
 

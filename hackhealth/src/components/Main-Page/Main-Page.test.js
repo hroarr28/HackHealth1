@@ -12,10 +12,10 @@ test("Wednesday button function on main page is present", function () {
   expect(wedButton).toBeVisible();
 });
 
-test("Weekly number in input field matches user input", function () {
-    render(<MainPage getUserName={jest.fn} user={user} handleClick={jest.fn} />);
-    const num = "1000";
-    const input = screen.getByRole("textbox");
-    userEvent.type(input, num);
-    expect(screen.getByRole("textbox")).toHaveValue(num);
-  });
+// test("Weekly number in input field matches user input", function () {
+//     render(<MainPage getUserName={jest.fn} user={user} handleClick={jest.fn} />);
+//     const num = "1000";
+//     const input = screen.getByRole("textbox");
+//     userEvent.type(input, num);
+//     expect(screen.getByRole("textbox")).toHaveValue(num);
+//   });

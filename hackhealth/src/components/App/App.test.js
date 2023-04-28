@@ -2,13 +2,13 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import App from "./index";
 import { BrowserRouter as Router } from "react-router-dom";
 
-// test("renders learn react link", () => {
-//   render(
-//     <Router>
-//       <App />
-//     </Router>
-//   );
-// });
+test("renders learn react link", () => {
+  render(
+    <Router>
+      <App />
+    </Router>
+  );
+});
 
 // describe('Login Button', () => {
 //   it('should go to next page on when logging in', () => {

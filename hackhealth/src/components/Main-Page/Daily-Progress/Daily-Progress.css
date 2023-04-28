@@ -2,9 +2,15 @@
   background-color: #81a4cd;
   border-radius: 20px;
 }
+
+.day-name-wrapper h2 {
+  color: black;
+  font-weight: bold;
+}
+
 .day-name {
   width: 50%;
-  margin-left: 20px ;
+  margin-left: 20px;
 }
 
 .Daily-Progress {
@@ -62,7 +68,7 @@
   font-size: 1rem;
   border: #f17300 2px solid;
   background-color: #f17300;
-  color: white;
+  color: black;
   cursor: pointer;
 }
 

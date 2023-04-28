@@ -28,6 +28,7 @@ function WeeklyGoal(props) {
             onChange={props.handleWeeklyEnterChange}
             type="text"
             onKeyDown={handleKeyDown}
+            aria-label="Weekly Step Goal"
           />
           <button onClick={props.handleEnterClick}>Submit</button>
         </div>

@@ -1,121 +1,114 @@
-.weekly-container{
-    display: grid; 
-    grid-template-columns: 1fr 1fr 1fr; 
-    grid-template-rows: 0.3fr 1fr; 
-    grid-template-areas: 
-      "header header header"
-      "Goal reminder distance";
-      gap: 0px 20px;
+.weekly-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.3fr 1fr;
+  grid-template-areas:
+    "header header header"
+    "Goal reminder distance";
+  gap: 0px 20px;
 }
 
-.welcome-header{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    background-color:#2b5376 ;
-    grid-area: header;
-    padding: 3px;
-    border-radius: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 20px;
+.welcome-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  background-color: #2b5376;
+  grid-area: header;
+  padding: 3px;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
 }
 
-.weekly-reminder{
-    grid-area: reminder;
-    background-color: #82a8d068;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    border-radius: 10px; 
-    margin-left: 20px;
-    
-    
-    margin-top: 20px;
-   
+.weekly-reminder {
+  grid-area: reminder;
+  background-color: #82a8d068;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 10px;
+  margin-left: 20px;
+
+  margin-top: 20px;
 }
 
-.weekly-goal{
-    padding: 10px;
-    grid-area: Goal;
-    background-color: #f17400ec;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    gap: 10px;
-    border-radius: 10px; 
-    margin-left: 20px;
-    margin-top: 20px;
-  
-   
+.weekly-goal {
+  padding: 10px;
+  grid-area: Goal;
+  background-color: #f17400ec;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-top: 20px;
 }
-.goal-letter{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 5px;}
-.goal-form{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 5px;
+.goal-letter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 5px;
 }
-.goal-form img{
-    height: 10em;
-    width: 10em;
+.goal-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 5px;
 }
-.distance{
-    grid-area: distance;
-    background-color: #82a8d068;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-justify-content: space-around;
-    align-items: center;
-    border-radius: 10px; 
-  
-    margin-right: 20px;
-    
-    margin-top: 20px;
+.goal-form img {
+  height: 10em;
+  width: 10em;
+}
+.distance {
+  grid-area: distance;
+  background-color: #82a8d068;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+
+  margin-right: 20px;
+
+  margin-top: 20px;
 }
 
-.welcome-header img{
-    height: 5em;
-    width: 5em;
-    border-radius: 20px;
-    box-shadow: -1px 4px 10px -3px #81A4CD;
-    
+.welcome-header img {
+  height: 5em;
+  width: 5em;
+  border-radius: 20px;
+  box-shadow: -1px 4px 10px -3px #81a4cd;
 }
-.weekly-reminder button{
-    width: 8rem;
-    height: 2.2rem;
-    border-radius: 10px;
-    text-align: center;
-    font-size: 1rem;
-    border: #F17300 2px solid;
-    background-color: #F17300;
-    color: white;
-    cursor: pointer;
+.weekly-reminder button {
+  width: 8rem;
+  height: 2.2rem;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1rem;
+  border: #f17300 2px solid;
+  background-color: #f17300;
+  color: black;
+  cursor: pointer;
 }
-.weekly-reminder button:hover{
-    border: white 2px solid;
-    background-color: white; 
-    color: #F17300;
+.weekly-reminder button:hover {
+  border: white 2px solid;
+  background-color: white;
+  color: #f17300;
 }
 
 .span-reminder {
-    color: #f1f1f1;
-    font-family: 'Merriweather Sans', sans-serif;
-    font-weight: 300;
-    text-decoration: underline;
-  }
-
-
-
+  color: #f1f1f1;
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 300;
+  text-decoration: underline;
+}
