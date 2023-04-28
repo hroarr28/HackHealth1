@@ -12,7 +12,8 @@ function LoginForm({ getUserName, handleClick, user }) {
   }
 
   return (
-    <div className="Login-Form">
+    <div className="Login-Form-Container">
+    <div className="Login">
       <header>
         <img src="https://i.ibb.co/tsP0RjZ/Hack-9.png" alt="LogoImg" />
       </header>
@@ -24,6 +25,9 @@ function LoginForm({ getUserName, handleClick, user }) {
           className="avatar-img"
         />
         <h3>Username</h3>
+      
+
+        <div className="input-form">
         <input
           type="text"
           placeholder="Username"
@@ -32,8 +36,6 @@ function LoginForm({ getUserName, handleClick, user }) {
           onChange={getUserName}
           onKeyDown={handleKeyDown}
         />
-
-        <div>
           {isLoggedIn ? (
             <button disabled>Logging In...</button>
           ) : (
@@ -41,6 +43,7 @@ function LoginForm({ getUserName, handleClick, user }) {
           )}
         </div>
       </form>
+    </div>
     </div>
   );
 }
