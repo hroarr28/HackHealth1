@@ -11,13 +11,13 @@ function DayButtons(props) {
         className='foot-logo'
       />
       <div className='week-buttons'>
-        <button>M</button>
-        <button>T</button>
-        <button>W</button>
-        <button>T</button>
-        <button>F</button>
-        <button>S</button>
-        <button>S</button>
+        <props.Button label='M' day={1} />
+        <props.Button label='T' day={2} />
+        <props.Button label='W' day={3} />
+        <props.Button label='T' day={4} />
+        <props.Button label='F' day={5} />
+        <props.Button label='S' day={6} />
+        <props.Button label='S' day={0} />
       </div>
     </div>
   );

@@ -5,9 +5,10 @@ import WeeklyProgress from "./Weekly-Progress/WeeklyProgress";
 import {useState, useEffect} from "react";
 import "./main-page.css";
 import "./Left-Side-Nav-Bar/Left-Side-Nav-Bar.css";
+import {clear} from "@testing-library/user-event/dist/clear";
 
 function MainPage(props) {
-  const [weeklyStepGoal, setWeeklyStepGoal] = useState(0);
+  const [weeklyStepGoal, setWeeklyStepGoal] = useState("");
   const [showWeeklyStepGoal, setShowWeeklyStepGoal] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -27,10 +28,6 @@ function MainPage(props) {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
-  const handleWeeklyEnterChange = (event) => {
-    setWeeklyStepGoal(event.target.value);
-  };
 
   const handleEnterClick = (event) => {
     if (!weeklyStepGoal || isNaN(weeklyStepGoal)) {
@@ -161,12 +158,12 @@ function MainPage(props) {
           days={days}
         />
         <WeeklyProgress
+          setWeeklyStepGoal={setWeeklyStepGoal}
           stepsRemainder={stepsRemainder}
           stepRemainderResult={stepRemainderResult}
           showWeeklyStepGoal={showWeeklyStepGoal}
           weeklyStepGoal={weeklyStepGoal}
           handleEnterClick={handleEnterClick}
-          handleWeeklyEnterChange={handleWeeklyEnterChange}
           user={props.user}
           totalSteps={totalSteps}
         />

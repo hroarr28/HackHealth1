@@ -4,16 +4,10 @@ import "./WeeklyGoal.css";
 function WeeklyGoal(props) {
   function handleKeyDown(event) {
     if (event.key === "Enter") {
-      const weeklyStepGoal = event.target.value.trim();
-
-      if (!weeklyStepGoal || isNaN(weeklyStepGoal)) {
-        alert("You silly bootcamper! You should know what a number is!");
-      } else {
-        props.handleEnterClick();
-        event.target.value = "";
-      }
+      props.handleEnterClick();
     }
   }
+
   return (
     <div className='weekly-goal'>
       <h2>Set Your Weekly Step Goal</h2>
@@ -25,9 +19,10 @@ function WeeklyGoal(props) {
         <div className='goal-form'>
           <input
             className='weekly-input'
-            onChange={props.handleWeeklyEnterChange}
+            onChange={(event) => props.setWeeklyStepGoal(event.target.value)}
             type='text'
             placeholder='Enter your step goal'
+            value={props.weeklyStepGoal}
             onKeyDown={handleKeyDown}
             aria-label='Weekly Step Goal'
           />
