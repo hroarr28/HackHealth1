@@ -7,16 +7,20 @@
 
 h1,
 h2 {
-  color: #ffffff;
+  color: #a9a9a9;
 
   font-family: "Fira Sans", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   padding: 10px;
   border-radius: 10px;
 }
 
 h3 {
-  color: #ffffff;
+  color: #a9a9a9;
   font-family: "Merriweather Sans", sans-serif;
   font-weight: 300;
+}
+
+input {
+  border-radius: 10px;
 }
