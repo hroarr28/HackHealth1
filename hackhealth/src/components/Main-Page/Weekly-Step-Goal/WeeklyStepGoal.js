@@ -27,6 +27,7 @@ function WeeklyGoal(props) {
             className='weekly-input'
             onChange={props.handleWeeklyEnterChange}
             type='text'
+            placeholder='Enter your step goal'
             onKeyDown={handleKeyDown}
             aria-label='Weekly Step Goal'
           />

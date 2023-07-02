@@ -2,16 +2,31 @@ import React from "react";
 import DailyProgress from "./Daily-Progress/Daily-Progress";
 import DayButtons from "./Left-Side-Nav-Bar/Left-Side-Nav-Bar";
 import WeeklyProgress from "./Weekly-Progress/WeeklyProgress";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import "./main-page.css";
 import "./Left-Side-Nav-Bar/Left-Side-Nav-Bar.css";
 
-// make a main page component
-
 function MainPage(props) {
   const [weeklyStepGoal, setWeeklyStepGoal] = useState(0);
-  // create use state to display weekly step goal on click
   const [showWeeklyStepGoal, setShowWeeklyStepGoal] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  console.log("isMobile", isMobile);
+
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth < 1200) setIsMobile(true);
+      else setIsMobile(false);
+    }
+
+    // Add event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const handleWeeklyEnterChange = (event) => {
     setWeeklyStepGoal(event.target.value);
@@ -19,7 +34,7 @@ function MainPage(props) {
 
   const handleEnterClick = (event) => {
     if (!weeklyStepGoal || isNaN(weeklyStepGoal)) {
-      alert("Please enter a valid number for weekly step goal.");
+      alert("Please enter a valid number for the weekly step goal.");
     } else {
       setShowWeeklyStepGoal(true);
     }
@@ -47,8 +62,6 @@ function MainPage(props) {
   const [saturdaySteps, setSaturdaySteps] = useState(0);
   const [sundaySteps, setSundaySteps] = useState(0);
   const [stepsRemainder, setStepsRemainder] = useState(0);
-
-  console.log(selectedDay.day);
 
   function handleClick(day) {
     setSelectedDay(day);
@@ -99,7 +112,6 @@ function MainPage(props) {
 
   function stepRemainderResult() {
     const remainder = weeklyStepGoal - totalSteps;
-    console.log(remainder, "remainder");
     setStepsRemainder(remainder);
   }
 
@@ -132,38 +144,48 @@ function MainPage(props) {
   }
 
   return (
-    <div className='main'>
-      <DayButtons
-        Button={Button}
-        getDayName={getDayName}
-        selectedDay={selectedDay}
-        days={days}
-      />
-      <WeeklyProgress
-        stepsRemainder={stepsRemainder}
-        stepRemainderResult={stepRemainderResult}
-        showWeeklyStepGoal={showWeeklyStepGoal}
-        weeklyStepGoal={weeklyStepGoal}
-        handleEnterClick={handleEnterClick}
-        handleWeeklyEnterChange={handleWeeklyEnterChange}
-        user={props.user}
-        totalSteps={totalSteps}
-      />
-      <DailyProgress
-        setDaySteps={setDaySteps}
-        getDaySteps={getDaySteps}
-        selectedDay={selectedDay}
-        getDayName={getDayName}
-        stepRemainderResult={stepRemainderResult}
-      />
-      <div className='quote-container'>
-        <h2>"Step by step, you can achieve anything you set your mind to"</h2>
-        <img
-          src='https://www.univariety.com/blog/wp-content/uploads/2014/08/motivational-goals.jpg'
-          alt='an illustrated avatar'
+    <>
+      {isMobile && (
+        <div className='not-optimized-message'>
+          <h1>
+            Not Optimized For Mobile...Yet <br></br> Please View On Desktop For
+            The Best Experience!
+          </h1>
+        </div>
+      )}
+      <div className='main'>
+        <DayButtons
+          Button={Button}
+          getDayName={getDayName}
+          selectedDay={selectedDay}
+          days={days}
         />
+        <WeeklyProgress
+          stepsRemainder={stepsRemainder}
+          stepRemainderResult={stepRemainderResult}
+          showWeeklyStepGoal={showWeeklyStepGoal}
+          weeklyStepGoal={weeklyStepGoal}
+          handleEnterClick={handleEnterClick}
+          handleWeeklyEnterChange={handleWeeklyEnterChange}
+          user={props.user}
+          totalSteps={totalSteps}
+        />
+        <DailyProgress
+          setDaySteps={setDaySteps}
+          getDaySteps={getDaySteps}
+          selectedDay={selectedDay}
+          getDayName={getDayName}
+          stepRemainderResult={stepRemainderResult}
+        />
+        <div className='quote-container'>
+          <h2>"Step by step, you can achieve anything you set your mind to"</h2>
+          <img
+            src='https://www.univariety.com/blog/wp-content/uploads/2014/08/motivational-goals.jpg'
+            alt='an illustrated avatar'
+          />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
