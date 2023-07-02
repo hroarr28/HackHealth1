@@ -1,5 +1,5 @@
 .step-goal {
-  background-color: #81a4cd;
+  background-color: #caebf2;
   border-radius: 20px;
   padding: 20%;
   margin-left: 20px;
@@ -13,14 +13,6 @@
   align-items: center;
   gap: 5px;
 }
-.goal-letter {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 45%;
-  gap: 5px;
-}
 
 .goal-form button {
   width: 6rem;
@@ -28,27 +20,14 @@
   border-radius: 10px;
   text-align: center;
   font-size: 1rem;
-  border: #3e73b1 2px solid;
-  background-color: #3e73b1;
+
+  background-color: #ff3b3f;
   color: white;
   cursor: pointer;
 }
-.goal-form button:hover {
-  border: white 2px solid;
-  background-color: white;
-  color: #3e73b1;
-}
+
 .weekly-container img {
   width: 8rem;
   height: 8rem; /*anj added*/
   align-self: center;
-}
-
-.weekly-input {
-  width: 12rem;
-  height: 2rem;
-  border-radius: 10px;
-  text-align: center;
-  font-size: 1rem;
-  outline: none;
 }

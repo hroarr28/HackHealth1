@@ -2,10 +2,10 @@ import React from "react";
 import DailyProgress from "./Daily-Progress/Daily-Progress";
 import DayButtons from "./Left-Side-Nav-Bar/Left-Side-Nav-Bar";
 import WeeklyProgress from "./Weekly-Progress/WeeklyProgress";
-import { useState } from "react";
+import {useState} from "react";
 import "./main-page.css";
 import "./Left-Side-Nav-Bar/Left-Side-Nav-Bar.css";
-import "./main-page.css";
+
 // make a main page component
 
 function MainPage(props) {
@@ -26,13 +26,13 @@ function MainPage(props) {
   };
 
   const days = [
-    { id: 0, day: "Sunday" },
-    { id: 1, day: "Monday" },
-    { id: 2, day: "Tuesday" },
-    { id: 3, day: "Wednesday" },
-    { id: 4, day: "Thursday" },
-    { id: 5, day: "Friday" },
-    { id: 6, day: "Saturday" },
+    {id: 0, day: "Sunday"},
+    {id: 1, day: "Monday"},
+    {id: 2, day: "Tuesday"},
+    {id: 3, day: "Wednesday"},
+    {id: 4, day: "Thursday"},
+    {id: 5, day: "Friday"},
+    {id: 6, day: "Saturday"},
   ];
 
   const today = new Date().getDay();
@@ -56,7 +56,7 @@ function MainPage(props) {
 
   function Button(props) {
     return (
-      <button className="nav-button" onClick={() => handleClick(props.day)}>
+      <button className='nav-button' onClick={() => handleClick(props.day)}>
         {props.label}
       </button>
     );
@@ -132,7 +132,7 @@ function MainPage(props) {
   }
 
   return (
-    <div className="main">
+    <div className='main'>
       <DayButtons
         Button={Button}
         getDayName={getDayName}
@@ -156,11 +156,11 @@ function MainPage(props) {
         getDayName={getDayName}
         stepRemainderResult={stepRemainderResult}
       />
-      <div className="quote-container">
+      <div className='quote-container'>
         <h2>"Step by step, you can achieve anything you set your mind to"</h2>
         <img
-          src="https://www.univariety.com/blog/wp-content/uploads/2014/08/motivational-goals.jpg"
-          alt="an illustrated avatar"
+          src='https://www.univariety.com/blog/wp-content/uploads/2014/08/motivational-goals.jpg'
+          alt='an illustrated avatar'
         />
       </div>
     </div>

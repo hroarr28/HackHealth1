@@ -1,81 +1,83 @@
-.login-page{    
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-      
+.login-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-
-
-
-.Login-Form-Container{
-    grid-area: Login;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #3e73b1;
-    margin: 5%;
-    border-radius: 5%;
-    width: 50%;
-    height: 80vh;
+.Login-Form-Container {
+  grid-area: Login;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #efefef;
+  margin: 5%;
+  border-radius: 5%;
+  width: 50%;
+  height: 80vh;
 }
 
-.img-container{
-    grid-area: Image;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #3e73b1;
-    margin-top: 10%;
-    border-radius: 5%;
+.img-container {
+  grid-area: Image;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #caebf2;
+  margin-top: 10%;
+  border-radius: 5%;
 }
 
-.Login{
-    background-color: #2B5376;
-    width: 50%;
-    height: 68vh;
-    border-radius: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.Login {
+  background-color: #caebf2;
+  width: 50%;
+  height: 68vh;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.avatar-img{
-    border-radius: 20px;
+.avatar-img {
+  border-radius: 20px;
+  width: 8rem !important;
+  height: auto;
 }
 
-input{
-    width: 60%;
-    height: 3vh;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    padding-left: 10px;
-    margin-bottom: 10px;
-    gap: 20px;
+input {
+  width: 60%;
+  height: 3vh;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  gap: 20px;
 }
-.input-form{
-    width: 40vh;
+.input-form {
+  width: 40vh;
 }
 button {
-    width:30%;
-    margin-left: 20px;
-    height: 3vh;
-    border-radius: 10px;
-    text-align: center;
-    font-size: 1rem;
-    border: #f17300 2px solid;
-    background-color: #f17300;
-    color: black;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    border: white 2px solid;
-    background-color: white;
-    color: black;
-  }
+  width: 30%;
+  margin-left: 20px;
+  height: 3vh;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1rem;
+  outline: none;
+  background-color: #ff3b3f;
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+
+button:hover {
+  background-color: white;
+  color: black;
+}
+
+.Login-Form-Container img {
+  width: 15rem;
+}

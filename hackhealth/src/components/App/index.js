@@ -2,8 +2,8 @@ import DayButtons from "../Main-Page/Left-Side-Nav-Bar/Left-Side-Nav-Bar";
 import "./App.css";
 import MainPage from "../Main-Page/Main-Page";
 import LoginPage from "../Login-Page/LoginPage";
-import { useState, useEffect } from "react";
-import { Route, Routes, Link, useNavigate } from "react-router-dom";
+import {useState, useEffect} from "react";
+import {Route, Routes, Link, useNavigate} from "react-router-dom";
 function App() {
   const navigate = useNavigate();
   const [name, setName] = useState("");
@@ -27,10 +27,10 @@ function App() {
   }, [user, navigate]);
 
   return (
-    <main className="App">
+    <main className='App'>
       <Routes>
         <Route
-          path="/"
+          path='/'
           element={
             <LoginPage
               getUserName={getUserName}
@@ -40,7 +40,7 @@ function App() {
             />
           }
         />
-        <Route path="/main" element={<MainPage user={user} />} />
+        <Route path='/main' element={<MainPage user={user} />} />
       </Routes>
     </main>
   );
