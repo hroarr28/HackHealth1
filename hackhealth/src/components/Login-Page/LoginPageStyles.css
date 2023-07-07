@@ -32,7 +32,7 @@
 .Login {
   background-color: #caebf2;
   width: 50%;
-  height: 68vh;
+  height: 100vh;
   border-radius: 50px;
   display: flex;
   flex-direction: column;
