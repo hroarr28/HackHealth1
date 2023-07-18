@@ -6,7 +6,7 @@ An MVP built in React that helps you to keep track of your daily steps and your 
 
 ## Screenshots
 
-![HackHealth gif](./hackhealth/images/HackHealth_AdobeExpress.gif)
+![HackHealth gif](./hackhealth/images/HackHealth_AdobeExpress.gif) =500x250
 
 ## Motivation
 
